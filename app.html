@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>APPLICATION</title>
+    <style type="text/css">
+    body{
+        background-image: url(k.JPEG);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .content{
+        background-image: url(logo.PNG);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-color: #FFF;
+        width: 20%;
+        padding: 150px;
+        margin: 100px auto;
+        text-align: start;
+    }
+    .c{
+        text-align: center;
+        
+    }
+    </style>
+
+</head>
+<body>
+    <div class=content>
+        <p>
+            <h1 style="text-align: center;">APPLICATION</h1>
+        </p>
+        <form>
+            <label>FIRST NAME   : </label>
+            <input type="text" id="first"><br><br>
+            <label>LAST NAME    : </label>  
+            <input type="text" id="last"><br><br>
+            <label>EMAIL ADRESS:</label><input type="email" id="email"><br><br>
+            
+            <label>MOBILE NO:	</label>
+            <input type="number" name="phone number" id="number"><br><br>
+	    <label>ADRESSS  :</label><input type="txt" id="adress"><br><br>
+            <label >BRANCH:</label><br>
+            <div class=c id="branch">
+            <input type="radio" name="branch" value="CSE">CSE<br>
+            <input type="radio" name="branch" value="ECE">ECE<br>
+            <input type="radio" name="branch" value="IT">IT<br>
+            <input type="radio" name="branch" value="EIE">EIE
+	    
+            </div>
+            <button type="button" onclick="" id="submit">SUBMIT</button>
+        </form>
+    </div>
+    <script>
+         
+        var data={FIRSTNAME:"",LASTNAME:"",EMAILADRESS:"",MOBILENO:"",ADRESS:"",BRANCH:""};
+        var button=document.querySelector("#submit");
+        button.addEventListener("click",function(){
+            alert("hay your application has been submitted");
+            data.FIRSTNAME=document.querySelector("#first").value;
+            data.LASTNAME=document.querySelector("#last").value;
+            data.EMAILADRESS=document.querySelector("#email").value;
+            data.MOBILENO=document.querySelector("#number").value;
+            data.ADRESS=document.querySelector("#adress").value;
+            data.BRANCH=document.querySelector('input[name="branch"]:checked').value;
+            console.log(data);
+            var details= data =>{
+                return data.json();
+            }
+            alert("Hello" +data.FIRSTNAME +data.LASTNAME +"welcome to kmit . Have a nice day.");
+        });
+    </script>
+    
+</body>
+</html>
